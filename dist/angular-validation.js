@@ -599,7 +599,8 @@
             }
           };
 
-          if (isValid.constructor === Object) isValid.then(setFocus);
+          // if (isValid.constructor === Object) isValid.then(setFocus);
+          if (isValid && angular.isFunction(isValid.then)) isValid.then(setFocus);
           else setFocus(isValid);
         });
 
